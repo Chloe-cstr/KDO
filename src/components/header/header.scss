@@ -1,0 +1,55 @@
+@use '../../sass/abstracts/variables';
+
+.header{
+    display: flex;
+    padding: 20px 40px;
+    width: 100%;
+    &__logo{
+        width: 100%;
+    }
+    &__burger {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        cursor: pointer;
+        .burger-icon {
+            display: block; // Afficher l'icône burger
+            font-size: 25px;
+        }
+        .close-icon {
+            display: none; // Icône de fermeture cachée par défaut
+            font-size: 25px;
+        }
+        &.active .burger-icon {
+            display: none; // Cacher l'icône burger
+        }
+    }
+    &__nav{
+        position: fixed; /* Le menu sera fixe, glissant par-dessus la page */
+        top: 0;
+        right: -100%; /* On commence le menu en dehors de l'écran */
+        width: 70%; /* Largeur du menu (modifiable) */
+        height: 100vh; /* Pleine hauteur de l'écran */
+        background-color: #fff; /* Couleur de fond du menu */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Ombre pour un effet */
+        transition: transform 0.3s ease; /* Transition fluide */
+        z-index: 1000; /* Par-dessus le contenu principal */
+        &.active {
+            transform: translateX(-100%); /* Le menu glisse sur l'écran */
+        }
+        .close-icon{
+            display: flex;
+            padding: 40px 20px;
+            font-size: 25px;
+        }
+        &__list{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 30px;
+            list-style: none;
+        }
+    }
+}
