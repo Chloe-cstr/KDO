@@ -1,0 +1,28 @@
+@use '../../sass/abstracts/variables';
+
+.presentation{
+    position: relative;
+    &__background{
+        position: relative;
+        &__img{
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+    }
+    &__content{
+        position: absolute;
+        display: flex;
+        top: 100px;
+        width: 100%;
+        justify-content: center; /* Centre les enfants horizontalement */
+        align-items: center;
+        &__title{
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            font-family: variables.$title-font;
+            text-align: center;
+        }
+    }
+}
